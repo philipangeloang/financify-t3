@@ -2,8 +2,8 @@
 
 ## TODO
 
-- [ ] Deploy in Vercel
-- [ ] Set up Vercel Postgres Database
+- [x] Deploy in Vercel
+- [x] Set up Vercel Postgres Database
 - [ ] Attach Database to UI
 - [ ] Add Authentication with Next Auth
 - [ ] Create backend
