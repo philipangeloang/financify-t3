@@ -4,9 +4,9 @@ import {
   integer,
   pgTableCreator,
   primaryKey,
-  serial,
   text,
   timestamp,
+  uuid,
   varchar,
 } from "drizzle-orm/pg-core";
 import { type AdapterAccount } from "next-auth/adapters";
@@ -22,7 +22,7 @@ export const createTable = pgTableCreator((name) => `financify-t3_${name}`);
 export const posts = createTable(
   "post",
   {
-    id: serial("id").primaryKey(),
+    id: uuid("id").primaryKey().defaultRandom(),
     name: varchar("name", { length: 256 }),
     createdById: varchar("createdById", { length: 255 })
       .notNull()
@@ -39,7 +39,7 @@ export const posts = createTable(
 );
 
 export const users = createTable("user", {
-  id: varchar("id", { length: 255 }).notNull().primaryKey(),
+  id: uuid("id").primaryKey().defaultRandom(),
   name: varchar("name", { length: 255 }),
   email: varchar("email", { length: 255 }).notNull(),
   emailVerified: timestamp("emailVerified", {
