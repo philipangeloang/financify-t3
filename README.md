@@ -4,7 +4,7 @@
 
 - [x] Deploy in Vercel
 - [x] Set up Vercel Postgres Database
-- [ ] Attach Database to UI
+- [x] Attach Database to UI
 - [x] Add Authentication with Next Auth
 - [ ] Create backend
 - [ ] Test backend

@@ -8,8 +8,9 @@ import { api } from "~/trpc/react";
 export function CreatePost() {
   const router = useRouter();
   const [name, setName] = useState("");
+  const [categoryType, setCategoryType] = useState("");
 
-  const createPost = api.post.create.useMutation({
+  const createCategory = api.category.create.useMutation({
     onSuccess: () => {
       router.refresh();
       setName("");
@@ -20,7 +21,7 @@ export function CreatePost() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        createPost.mutate({ name });
+        createCategory.mutate({ name, categoryType });
       }}
       className="flex flex-col gap-2"
     >
@@ -31,12 +32,19 @@ export function CreatePost() {
         onChange={(e) => setName(e.target.value)}
         className="w-full rounded-full px-4 py-2 text-black"
       />
+      <input
+        type="text"
+        placeholder="Title"
+        value={categoryType}
+        onChange={(e) => setCategoryType(e.target.value)}
+        className="w-full rounded-full px-4 py-2 text-black"
+      />
       <button
         type="submit"
         className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
-        disabled={createPost.isPending}
+        disabled={createCategory.isPending}
       >
-        {createPost.isPending ? "Submitting..." : "Submit"}
+        {createCategory.isPending ? "Submitting..." : "Submit"}
       </button>
     </form>
   );
