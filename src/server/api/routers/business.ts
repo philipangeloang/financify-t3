@@ -11,19 +11,21 @@ export const businessRouter = createTRPCRouter({
   create: protectedProcedure
     .input(z.object({ 
         name: z.string().min(1),
-        categoryType: z.string().min(1),
+        profit: z.number().nonnegative(),
+        loss: z.number().nonnegative(),
     }))
     .mutation(async ({ ctx, input }) => {
      
-      await ctx.db.insert(categories).values({
+      await ctx.db.insert(businesses).values({
         name: input.name,
-        categoryType: input.categoryType,
+        profit: input.profit,
+        loss: input.loss,
         createdById: ctx.session.user.id,
       });
     }),
 
   getLatest: publicProcedure.query(({ ctx }) => {
-    return ctx.db.query.categories.findMany();
+    return ctx.db.query.businesses.findMany();
   }),
 
   getSecretMessage: protectedProcedure.query(() => {

@@ -10,20 +10,22 @@ import { transactions } from "~/server/db/schema";
 export const transactionRouter = createTRPCRouter({
   create: protectedProcedure
     .input(z.object({ 
-        name: z.string().min(1),
-        categoryType: z.string().min(1),
+        category: z.string().min(1),
+        storage: z.string().min(1),
+        amount: z.number().nonnegative(),
     }))
     .mutation(async ({ ctx, input }) => {
      
-      await ctx.db.insert(categories).values({
-        name: input.name,
-        categoryType: input.categoryType,
+      await ctx.db.insert(transactions).values({
+        category: input.category,
+        storage: input.storage,
+        amount: input.amount,
         createdById: ctx.session.user.id,
       });
     }),
 
   getLatest: publicProcedure.query(({ ctx }) => {
-    return ctx.db.query.categories.findMany();
+    return ctx.db.query.transactions.findMany();
   }),
 
   getSecretMessage: protectedProcedure.query(() => {

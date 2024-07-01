@@ -1,10 +1,9 @@
-import { create } from "domain";
 import { relations, sql } from "drizzle-orm";
 import {
   boolean,
   index,
   integer,
-  numeric,
+  real,
   pgEnum,
   pgTableCreator,
   primaryKey,
@@ -76,8 +75,8 @@ export const transactions = createTable(
     id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdById: varchar("createdById", { length: 255 }).notNull().references(() => users.id),
     category: varchar("category", {length: 255}).notNull(),
-    account: varchar("account", {length: 255}).notNull(),
-    amount: numeric("amount").notNull(),
+    storage: varchar("account", {length: 255}).notNull(),
+    amount: real("amount").notNull(),
     createdAt: timestamp("createdAt", { withTimezone: true }).default(sql`CURRENT_TIMESTAMP`).notNull(),
     updatedAt: timestamp("updatedAt", { withTimezone: true }),
   }
@@ -89,7 +88,7 @@ export const storages = createTable(
     id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdById: varchar("createdById", { length: 255 }).notNull().references(() => users.id),
     name: varchar("name", {length: 255}).notNull(),
-    amount: numeric("amount").notNull(),
+    amount: real("amount").notNull(),
     storageType: varchar("name", {length: 255}).notNull(),
   }
 );
@@ -100,7 +99,7 @@ export const debts = createTable(
     id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdById: varchar("createdById", { length: 255 }).notNull().references(() => users.id),
     name: varchar("name", {length: 255}).notNull(),
-    amount: numeric("amount").notNull(),
+    amount: real("amount").notNull(),
     isPaid: boolean("isPaid").default(false),
   }
 );
@@ -111,8 +110,8 @@ export const businesses = createTable(
     id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdById: varchar("createdById", { length: 255 }).notNull().references(() => users.id),
     name: varchar("name", {length: 255}).notNull(),
-    profit: numeric("profit").notNull(),
-    loss: numeric("loss").notNull(),
+    profit: real("profit").notNull(),
+    loss: real("loss").notNull(),
   }
 );
 
