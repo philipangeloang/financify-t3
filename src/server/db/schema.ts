@@ -192,7 +192,40 @@ export const verificationTokens = createTable(
 
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
+  category: many(categories),
+  subcategory: many(subcategories),
+  transaction: many(transactions),
+  storage: many(storages),
+  debt: many(debts),
+  business: many(businesses)
 }));
+
+export const categoryRelations = relations(categories, ({many, one}) => ({
+  user: one(users, {fields: [categories.createdById], references: [users.id]}),
+  subcategory: many(subcategories),
+}))
+
+export const subcategoryRelations = relations(subcategories, ({ one}) => ({
+  user: one(users, {fields: [subcategories.createdById], references: [users.id]}),
+  subcategory: one(categories, {fields: [subcategories.categoryId], references: [categories.id]}),
+}))
+
+export const transaction = relations(transactions, ({one}) => ({
+  user: one(users, {fields: [transactions.createdById], references: [users.id]}),
+}))
+
+
+export const storage = relations(storages, ({one}) => ({
+  user: one(users, {fields: [storages.createdById], references: [users.id]}),
+}))
+
+export const debt = relations(debts, ({one}) => ({
+  user: one(users, {fields: [debts.createdById], references: [users.id]}),
+}))
+
+export const business = relations(businesses, ({one}) => ({
+  user: one(users, {fields: [businesses.createdById], references: [users.id]}),
+}))
 
 export const accountsRelations = relations(accounts, ({ one }) => ({
   user: one(users, { fields: [accounts.userId], references: [users.id] }),
@@ -202,6 +235,4 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
   user: one(users, { fields: [sessions.userId], references: [users.id] }),
 }));
 
-export const categoryRelations = relations(categories, ({one}) => ({
-  user: one(users, {fields: [categories.createdById], references: [users.id]})
-}))
+
