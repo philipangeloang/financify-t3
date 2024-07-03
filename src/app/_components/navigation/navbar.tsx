@@ -1,12 +1,14 @@
-import { getServerAuthSession } from "~/server/auth";
 import UserIcon from "./user-icon";
+import { FaGgCircle } from "react-icons/fa";
 
 const Navbar = async () => {
-  const session = await getServerAuthSession();
   return (
     <main className="w-full p-4">
       <div className="mx-auto flex  max-w-screen-2xl items-center justify-between ">
-        <div className="text-4xl font-black">LOGO</div>
+        <div className="flex items-center justify-center gap-2 text-2xl">
+          <FaGgCircle size={35} />
+          <span className="font-bold"> financify</span>
+        </div>
         <UserIcon />
       </div>
     </main>

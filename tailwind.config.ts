@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        "dmserif" : "DM Serif Display"
+      },
       colors: {
         "main-green": "#9FE96E",
         "main-violet": "#A4A7F6",
