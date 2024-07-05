@@ -87,7 +87,8 @@ export const authOptions: NextAuthOptions = {
           pass: process.env.EMAIL_SERVER_PASSWORD
         }
       },
-      from: process.env.EMAIL_FROM
+      from: process.env.EMAIL_FROM,
+      maxAge: 600,
     }),
     
     /**

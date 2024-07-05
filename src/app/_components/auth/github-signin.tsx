@@ -8,9 +8,9 @@ const GithubSignin = () => {
       onClick={async () => {
         await signIn("github");
       }}
-      className="bg-main-black h-8 w-full"
+      className="h-8 w-full"
     >
-      test
+      Github
     </Button>
   );
 };

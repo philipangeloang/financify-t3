@@ -8,9 +8,9 @@ const GoogleSignin = () => {
       onClick={async () => {
         await signIn("google");
       }}
-      className="bg-main-black h-8 w-full"
+      className="h-8 w-full"
     >
-      test
+      Google
     </Button>
   );
 };

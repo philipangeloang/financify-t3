@@ -10,7 +10,7 @@ const ProviderSignout = () => {
       }}
       className="bg-main-black h-8 w-full"
     >
-      test
+      Sign Out
     </Button>
   );
 };

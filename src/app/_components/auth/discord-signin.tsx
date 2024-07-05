@@ -8,9 +8,9 @@ const DiscordSignin = () => {
       onClick={async () => {
         await signIn("discord");
       }}
-      className="bg-main-black h-8 w-full"
+      className="h-8 w-full"
     >
-      test
+      Discord
     </Button>
   );
 };
