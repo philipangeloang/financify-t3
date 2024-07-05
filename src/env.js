@@ -34,6 +34,12 @@ export const env = createEnv({
     POSTGRES_USER: z.string(),					
     POSTGRES_HOST: z.string(),				
     POSTGRES_PASSWORD: z.string(),				
+    POSTGRES_DATABASE: z.string(),
+    EMAIL_SERVER_USER: z.string(),
+    EMAIL_SERVER_PASSWORD: z.string(),
+    EMAIL_SERVER_HOST: z.string(),
+    EMAIL_SERVER_PORT: z.string(),
+    EMAIL_FROM: z.string(),
   },
 
   /**
@@ -66,6 +72,12 @@ export const env = createEnv({
     POSTGRES_USER: process.env.POSTGRES_USER,					
     POSTGRES_HOST: process.env.POSTGRES_HOST,
     POSTGRES_PASSWORD: process.env.POSTGRES_PASSWORD,
+    POSTGRES_DATABASE: process.env.POSTGRES_DATABASE,
+    EMAIL_SERVER_USER: process.env.EMAIL_SERVER_USER,
+    EMAIL_SERVER_PASSWORD: process.env.EMAIL_SERVER_PASSWORD,
+    EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST,
+    EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT,
+    EMAIL_FROM: process.env.EMAIL_FROM,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
