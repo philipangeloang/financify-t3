@@ -1,6 +1,7 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
+import { FaDiscord } from "react-icons/fa";
 
 const DiscordSignin = () => {
   return (
@@ -8,9 +9,10 @@ const DiscordSignin = () => {
       onClick={async () => {
         await signIn("discord");
       }}
-      className="h-8 w-full"
+      className="flex h-12 w-full gap-3 bg-[#5869E9] hover:bg-main-violet"
     >
-      Discord
+      <FaDiscord size={20} />
+      <span>Continue with Discord</span>
     </Button>
   );
 };

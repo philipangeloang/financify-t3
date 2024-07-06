@@ -1,6 +1,7 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
+import { FaGithub } from "react-icons/fa";
 
 const GithubSignin = () => {
   return (
@@ -8,9 +9,10 @@ const GithubSignin = () => {
       onClick={async () => {
         await signIn("github");
       }}
-      className="h-8 w-full"
+      className="flex h-12 w-full gap-3 bg-black hover:bg-main-violet"
     >
-      Github
+      <FaGithub size={20} />
+      <span>Continue with Github</span>
     </Button>
   );
 };

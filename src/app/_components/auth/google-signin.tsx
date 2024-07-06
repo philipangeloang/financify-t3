@@ -1,6 +1,7 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
+import { FaGoogle } from "react-icons/fa";
 
 const GoogleSignin = () => {
   return (
@@ -8,9 +9,10 @@ const GoogleSignin = () => {
       onClick={async () => {
         await signIn("google");
       }}
-      className="h-8 w-full"
+      className="flex h-12 w-full gap-3 bg-[#E74133] hover:bg-main-violet"
     >
-      Google
+      <FaGoogle size={20} />
+      <span>Continue with Google</span>
     </Button>
   );
 };

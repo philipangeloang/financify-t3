@@ -10,20 +10,22 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "~/app/_components/ui/popover";
-import { FaAngleDown } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
+
+import { FaAngleDown } from "react-icons/fa6";
+
 import DiscordSignin from "./discord-signin";
 import GithubSignin from "./github-signin";
 import GoogleSignin from "./google-signin";
 import EmailSignin from "./email-signin";
+import { Separator } from "../ui/separator";
 
 const UserIcon = async () => {
   const session = await getServerAuthSession();
@@ -39,17 +41,17 @@ const UserIcon = async () => {
               Log in
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>Log in to Financify</DialogTitle>
-              <DialogDescription>
-                Make changes to your profile here.
-              </DialogDescription>
+          <DialogContent className="flex flex-col items-center justify-center sm:max-w-[375px]">
+            <DialogHeader className="text-center">
+              <DialogTitle className="text-3xl">
+                Log in to Financify
+              </DialogTitle>
             </DialogHeader>
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex w-full flex-col items-center justify-center gap-3">
               <DiscordSignin />
               <GithubSignin />
               <GoogleSignin />
+              <Separator />
               <EmailSignin />
             </div>
           </DialogContent>
