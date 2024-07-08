@@ -55,6 +55,9 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   },
+  pages: {
+    verifyRequest: "/api/auth/verify-request",
+  },
   adapter: DrizzleAdapter(db, {
     usersTable: users,
     accountsTable: accounts,

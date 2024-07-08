@@ -16,6 +16,7 @@ import {
 import { Input } from "~/app/_components/ui/input";
 
 import { MdEmail } from "react-icons/md";
+import { signIn } from "next-auth/react";
 
 const formSchema = z.object({
   email: z.string().email().min(1, {
@@ -31,10 +32,10 @@ const EmailSignin = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values.email);
+    const email = values.email;
+    await signIn("email", { email });
   }
 
   return (
