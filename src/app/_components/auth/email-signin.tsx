@@ -10,7 +10,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "~/app/_components/ui/form";
 import { Input } from "~/app/_components/ui/input";
@@ -46,18 +45,17 @@ const EmailSignin = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="Enter email" {...field} />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
         />
         <Button
+          variant="outline"
           type="submit"
-          className="flex h-12 w-full gap-3 bg-main-green hover:bg-main-violet"
+          className="flex h-12 w-full gap-3 border border-black/10 hover:bg-main-violet"
         >
           <MdEmail size={20} color="black" />
           <span className="text-black">Continue with Email</span>

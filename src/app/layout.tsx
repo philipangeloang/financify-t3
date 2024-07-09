@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import GlobalNavbar from "./_components/auth/global-navbar";
 
 export const metadata = {
   title: "Financify",
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <GlobalNavbar />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

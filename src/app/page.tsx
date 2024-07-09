@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { signIn } from "next-auth/react";
-
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { LuUsers2 } from "react-icons/lu";
 import { VscGraphLine } from "react-icons/vsc";
@@ -17,17 +15,8 @@ import UserIcon from "./_components/auth/user-icon";
 export default async function Home() {
   return (
     <main className="w-full p-4">
-      {/* Navigation */}
-      <div className="mx-auto flex  max-w-screen-xl items-center justify-between pt-3 ">
-        <div className="flex items-center justify-center gap-2 text-2xl">
-          <FaGgCircle size={35} />
-          <span className="font-bold"> financify</span>
-        </div>
-        <UserIcon />
-      </div>
-
       {/* Hero */}
-      <div className="relative mx-auto mt-16 flex max-w-screen-xl flex-col items-center justify-center">
+      <div className="relative mx-auto mt-16 flex max-w-screen-2xl flex-col items-center justify-center">
         <div className="rounded-full bg-black/5 px-2 py-1 text-sm">
           v0.1 - Initial Application Launch
         </div>

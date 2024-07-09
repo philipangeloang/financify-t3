@@ -47,12 +47,16 @@ const UserIcon = async () => {
                 Log in to Financify
               </DialogTitle>
             </DialogHeader>
-            <div className="flex w-full flex-col items-center justify-center gap-3">
+            <div className="flex w-full flex-col items-center justify-center gap-3 text-center">
               <DiscordSignin />
               <GithubSignin />
               <GoogleSignin />
               <Separator />
               <EmailSignin />
+              <p className="mt-5 px-5 text-xs text-main-gray">
+                By clicking continue, you agree to our Terms of Service and
+                Privacy Policy.
+              </p>
             </div>
           </DialogContent>
         </Dialog>
