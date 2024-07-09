@@ -5,7 +5,8 @@ import UserIcon from "./user-icon";
 
 const GlobalNavbar = () => {
   return (
-    <div className="mx-auto flex  max-w-screen-2xl items-center justify-between pt-3 ">
+    <div className="w-full p-4">
+        <div className="mx-auto flex  max-w-screen-2xl items-center justify-between">
       <Link
         href="/"
         className="flex items-center justify-center gap-2 text-2xl "
@@ -15,6 +16,8 @@ const GlobalNavbar = () => {
       </Link>
       <UserIcon />
     </div>
+    </div>
+  
   );
 };
 
