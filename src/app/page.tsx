@@ -6,8 +6,6 @@ import { VscGraphLine } from "react-icons/vsc";
 import { PiGlobeLight } from "react-icons/pi";
 
 import { Button } from "./_components/ui/button";
-import { FaGgCircle } from "react-icons/fa6";
-import UserIcon from "./_components/auth/user-icon";
 
 // const session = await getServerAuthSession();
 // #9FE96E #A4A7F6 #636363 #000000 #FFFFFF
