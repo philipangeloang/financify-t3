@@ -20,12 +20,16 @@ import {
 } from "../ui/dialog";
 
 import { FaAngleDown } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
+import { IoSettingsOutline } from "react-icons/io5";
+import { MdLogout } from "react-icons/md";
 
 import DiscordSignin from "./discord-signin";
 import GithubSignin from "./github-signin";
 import GoogleSignin from "./google-signin";
 import EmailSignin from "./email-signin";
 import { Separator } from "../ui/separator";
+import ProviderSignout from "./providers-signout";
 
 const UserIcon = async () => {
   const session = await getServerAuthSession();
@@ -51,7 +55,7 @@ const UserIcon = async () => {
               <DiscordSignin />
               <GithubSignin />
               <GoogleSignin />
-              <Separator />
+              <Separator className="w-full" />
               <EmailSignin />
               <p className="mt-5 px-5 text-xs text-main-gray">
                 By clicking continue, you agree to our Terms of Service and
@@ -77,10 +81,40 @@ const UserIcon = async () => {
           </Avatar>
           <FaAngleDown />
         </PopoverTrigger>
-        <PopoverContent>
-          <Link className="font-bold" href="api/auth/signout">
-            <Button> Log out</Button>
-          </Link>
+        <PopoverContent className="w-[225px] p-0">
+          <div className="flex flex-col px-3 py-2 text-xs">
+            <p className="text-sm font-bold">{session.user.name}</p>
+            <p className="text-main-gray">{session.user.email}</p>
+          </div>
+          <Separator />
+          <div className="flex flex-col p-1 text-sm">
+            <Link
+              className="flex items-center justify-between gap-2 rounded-md p-2 hover:bg-black/10"
+              href="/"
+            >
+              <span>Profile</span>
+              <CgProfile size={18} className="text-main-gray" />
+            </Link>
+            <Link
+              className="flex items-center justify-between gap-2 rounded-md p-2 hover:bg-black/10"
+              href="/"
+            >
+              <span>Settings</span>
+              <IoSettingsOutline size={18} className="text-main-gray" />
+            </Link>
+          </div>
+          <Separator />
+          <div className="flex flex-col p-1 text-sm">
+            <Link
+              className="flex items-center justify-between gap-2 rounded-md p-2 hover:bg-black/10"
+              href="api/auth/signout"
+            >
+              <span>
+                <ProviderSignout />
+              </span>
+              <MdLogout size={18} className="text-main-gray" />
+            </Link>
+          </div>
         </PopoverContent>
       </Popover>
     </div>

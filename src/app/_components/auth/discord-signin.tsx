@@ -7,7 +7,7 @@ const DiscordSignin = () => {
   return (
     <Button
       onClick={async () => {
-        await signIn("discord");
+        await signIn("discord", { callbackUrl: "/overview" });
       }}
       className="flex h-12 w-full gap-3 bg-[#5869E9] hover:bg-main-violet"
     >

@@ -1,17 +1,16 @@
 "use client";
 import { signOut } from "next-auth/react";
-import { Button } from "../ui/button";
 
 const ProviderSignout = () => {
   return (
-    <Button
+    <p
       onClick={async () => {
-        await signOut();
+        await signOut({ callbackUrl: "/" });
       }}
-      className="bg-main-black h-8 w-full"
+      className="bg-main-black w-full"
     >
-      Sign Out
-    </Button>
+      Log out
+    </p>
   );
 };
 

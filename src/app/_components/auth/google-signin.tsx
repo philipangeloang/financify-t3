@@ -7,7 +7,7 @@ const GoogleSignin = () => {
   return (
     <Button
       onClick={async () => {
-        await signIn("google");
+        await signIn("google", { callbackUrl: "/overview" });
       }}
       className="flex h-12 w-full gap-3 bg-[#E74133] hover:bg-main-violet"
     >
