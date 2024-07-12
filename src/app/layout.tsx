@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-[#EAEAEA]">
         <div>
           <NavbarProvider>
             <TRPCReactProvider>{children}</TRPCReactProvider>

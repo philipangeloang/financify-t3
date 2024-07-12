@@ -13,10 +13,8 @@ const NavbarProvider = async ({ children }: { children: React.ReactNode }) => {
       ) : (
         <>
           <div className="flex">
-            <div className="w-[300px]">
-              <GlobalNavbar />
-            </div>
-            <div className="w-[calc(100%-300px)]"> {children}</div>
+            <GlobalNavbar />
+            <div className="ml-64 w-full"> {children}</div>
           </div>
         </>
       )}
