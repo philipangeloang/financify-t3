@@ -21,7 +21,7 @@ import {
 
 import { FaAngleDown } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
-import { IoSettingsOutline } from "react-icons/io5";
+import { IoSettingsOutline, IoNotificationsOutline } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
 
 import DiscordSignin from "./discord-signin";
@@ -69,10 +69,11 @@ const UserIcon = async () => {
   }
 
   return (
-    <div className="flex items-center gap-2">
-      <Button asChild variant="outline">
-        <Link href="/">Documentation</Link>
-      </Button>
+    <div className="flex items-center gap-5">
+      <IoNotificationsOutline
+        size={25}
+        className="cursor-pointer text-main-gray"
+      />
       <Popover>
         <PopoverTrigger className="flex items-center justify-center gap-2">
           <Avatar>
