@@ -16,13 +16,10 @@ const NavItems = () => {
   return (
     <>
       <div className="flex flex-col text-white">
-        <Link
-          href="/"
-          className="flex items-center gap-2 p-4 text-2xl text-white"
-        >
+        <div className="flex items-center gap-2 p-4 text-2xl text-white">
           <FaGgCircle size={35} />
           <p className="font-bold"> financify</p>
-        </Link>
+        </div>
         <Link
           href="/overview"
           className="group mt-9 flex cursor-pointer items-center gap-3 px-4 py-5 text-sm text-white/90 hover:text-white/100"
@@ -108,12 +105,12 @@ const NavItems = () => {
           Debts
         </Link>
         <Link
-          href="/profile/settings"
-          className="group flex  cursor-pointer items-center gap-3 px-4 py-5 text-sm text-white/90 hover:text-white/100"
+          href="/settings"
+          className="group flex cursor-pointer  items-center gap-3 px-4 py-5 text-sm text-white/90 hover:text-white/100"
         >
           <div
             className={
-              pathname === "/profile/settings"
+              pathname === "/settings"
                 ? "absolute right-0 h-10 w-1 bg-main-violet group-hover:block"
                 : "absolute right-0 hidden h-10 w-1 bg-main-green group-hover:block"
             }
