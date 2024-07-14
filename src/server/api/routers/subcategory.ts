@@ -11,12 +11,14 @@ export const subcategoryRouter = createTRPCRouter({
   create: protectedProcedure
     .input(z.object({ 
         name: z.string().min(1),
+        icon: z.string(),
         categoryId: z.string().min(1),
     }))
     .mutation(async ({ ctx, input }) => {
      
       await ctx.db.insert(subcategories).values({
         name: input.name,
+        icon: input.icon,
         categoryId: input.categoryId,
         createdById: ctx.session.user.id,
       });

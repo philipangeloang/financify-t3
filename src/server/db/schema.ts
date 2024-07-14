@@ -53,6 +53,7 @@ export const categories = createTable(
   {
     id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdById: varchar("createdById", { length: 255 }).notNull().references(() => users.id),
+    icon: varchar("icon", {length: 255}),
     name: varchar("name", {length: 255}).notNull(),
     categoryType: varchar("categoryType", {length: 255}).notNull(),
   }
@@ -63,6 +64,7 @@ export const subcategories = createTable(
   {
     id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdById: varchar("createdById", { length: 255 }).notNull().references(() => users.id),
+    icon: varchar("icon", {length: 255}),
     name: varchar("name", {length: 255}).notNull(),
     categoryId: varchar("categoryId", { length: 255 }).notNull().references(() => categories.id),
 

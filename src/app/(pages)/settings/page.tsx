@@ -7,6 +7,7 @@ import {
   TabsTrigger,
 } from "~/app/_components/ui/tabs";
 import UserIcon from "~/app/_components/auth/user-icon";
+import CategoryManagement from "~/app/_components/section/category-management";
 
 const Settings = async () => {
   const session = await getServerAuthSession();
@@ -42,7 +43,7 @@ const Settings = async () => {
           Preferences
         </TabsContent>
         <TabsContent className="px-10 py-3" value="categories">
-          Categories Management
+          <CategoryManagement />
         </TabsContent>
       </Tabs>
     </main>
