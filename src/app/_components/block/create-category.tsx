@@ -48,9 +48,13 @@ const CreateCategory = () => {
                   <Label htmlFor="type">Type</Label>
                   <Input id="type" placeholder="Category Type" />
                 </div>
+                <div className="space-y-1">
+                  <Label htmlFor="icon">Icon</Label>
+                  <Input id="icon" placeholder="Icon" />
+                </div>
               </CardContent>
               <CardFooter>
-                <Button>Save changes</Button>
+                <Button>Submit</Button>
               </CardFooter>
             </Card>
           </TabsContent>
