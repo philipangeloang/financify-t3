@@ -2,6 +2,7 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { CiCirclePlus } from "react-icons/ci";
 import { HiMiniXMark } from "react-icons/hi2";
 import { TbDotsVertical } from "react-icons/tb";
+import CreateCategory from "../block/create-category";
 
 const CategoryManagement = () => {
   return (
@@ -10,7 +11,7 @@ const CategoryManagement = () => {
       <div className="col-span-12 w-full rounded-lg bg-white lg:col-span-6">
         <h1 className="flex w-full items-center justify-between rounded-t-lg bg-main-green p-4 py-2 text-2xl font-bold">
           <p>Income</p>
-          <CiCirclePlus size={35} className="cursor-pointer" />
+          <CreateCategory />
         </h1>
 
         {/* Temporary */}
@@ -24,7 +25,6 @@ const CategoryManagement = () => {
               <TbDotsVertical size={20} className="cursor-pointer" />
             </div>
             <IoFastFoodOutline size={70} />
-
             <p className="w-full rounded-b-md bg-black p-1 text-center text-xs font-bold text-white">
               Fast Food
             </p>
