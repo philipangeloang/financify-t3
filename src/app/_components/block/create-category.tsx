@@ -1,3 +1,5 @@
+"use client";
+
 import { CiCirclePlus } from "react-icons/ci";
 import { Button } from "~/app/_components/ui/button";
 import {
@@ -21,8 +23,21 @@ import {
   CardHeader,
   CardTitle,
 } from "~/app/_components/ui/card";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "~/app/_components/ui/drawer";
+import { useState } from "react";
 
 const CreateCategory = () => {
+  const [icon, setIcon] = useState("");
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -50,7 +65,29 @@ const CreateCategory = () => {
                 </div>
                 <div className="space-y-1">
                   <Label htmlFor="icon">Icon</Label>
-                  <Input id="icon" placeholder="Icon" />
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Input id="icon" placeholder="Choose Icon" />
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <div className="mx-auto w-full px-4">
+                        <DrawerHeader>
+                          <DrawerTitle>Choose Icon</DrawerTitle>
+                          <DrawerDescription>
+                            Click your desired icon of choosing to describe the
+                            cateogry
+                          </DrawerDescription>
+                        </DrawerHeader>
+                        Contents
+                        <DrawerFooter>
+                          <DrawerClose asChild>
+                            <Button variant="outline">Cancel</Button>
+                          </DrawerClose>
+                        </DrawerFooter>
+                      </div>
+                    </DrawerContent>
+                  </Drawer>
+                  {/* End of Drawer */}
                 </div>
               </CardContent>
               <CardFooter>
