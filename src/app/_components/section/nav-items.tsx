@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaGgCircle } from "react-icons/fa6";
+import { BiSolidBlanket } from "react-icons/bi";
 import { HiOutlineSupport } from "react-icons/hi";
 import { IoBusinessOutline, IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineAccountBalanceWallet, MdOutlineLogout } from "react-icons/md";
@@ -17,7 +17,7 @@ const NavItems = () => {
     <>
       <div className="flex flex-col text-white">
         <div className="flex items-center gap-2 p-4 text-2xl text-white">
-          <FaGgCircle size={35} />
+          <BiSolidBlanket size={25} />
           <p className="font-bold"> financify</p>
         </div>
         <Link

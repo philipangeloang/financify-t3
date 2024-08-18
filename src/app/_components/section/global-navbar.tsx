@@ -5,7 +5,7 @@ import UserIcon from "../auth/user-icon";
 import NavItems from "./nav-items";
 
 import { getServerAuthSession } from "~/server/auth";
-import { FaGgCircle } from "react-icons/fa6";
+import { BiSolidBlanket } from "react-icons/bi";
 
 const GlobalNavbar = async () => {
   const session = await getServerAuthSession();
@@ -21,7 +21,7 @@ const GlobalNavbar = async () => {
     >
       {!session ? (
         <Link href="/" className="flex items-center gap-2 text-2xl ">
-          <FaGgCircle size={35} />
+          <BiSolidBlanket size={25} />
           <p className="font-bold"> financify</p>
         </Link>
       ) : (
